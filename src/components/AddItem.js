@@ -4,12 +4,14 @@ import { Button, Form, Input, Row, Col } from 'reactstrap';
 import { addItem } from '../actions/addItemAction';
 import '../styles/AddItem.css';
 
+const initialState = {
+    product: '',
+    qty: '',
+    price: ''
+};
+
 class AddItem extends Component {
-    state = {
-        product: '',
-        qty: '',
-        price: ''
-    }
+    state = { ...initialState };
 
     render() {
         return (
@@ -64,11 +66,7 @@ class AddItem extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.dispatch(addItem(this.state));
-        this.setState({
-            product: '',
-            qty: '',
-            price: ''
-        });
+        this.setState({ ...initialState });
     }
 }
 

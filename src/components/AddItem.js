@@ -1,51 +1,59 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Button, Form, Input, Row, Col } from 'reactstrap';
 import { addItem } from '../actions/addItemAction';
+import '../styles/AddItem.css';
 
 class AddItem extends Component {
     state = {
         product: '',
-        qty: 0,
-        price: 0
+        qty: '',
+        price: ''
     }
 
     render() {
         return (
-            <Form inline onSubmit={this.handleSubmit}>
-                <Label>Add a New Item</Label>
-                <FormGroup>
-                    <Input
-                        type="text"
-                        name="product"
-                        placeholder="Product Name"
-                        required
-                        onChange={this.handleChange}
-                        value={this.state.product}
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Input
-                        type="number"
-                        name="qty"
-                        placeholder="Quantity"
-                        required
-                        onChange={this.handleChange}
-                        value={this.state.qty}
-                    />
-                </FormGroup>
-                <FormGroup>
-                    <Input
-                        type="number"
-                        name="price"
-                        placeholder="Price"
-                        required
-                        onChange={this.handleChange}
-                        value={this.state.price}
-                    />
-                </FormGroup>
-                <Button type="submit" color="secondary">Add Item</Button>
-            </Form>
+            <div className="add-item">
+                <h5>Add New Item</h5>
+                <Form inline onSubmit={this.handleSubmit}>
+                    <Row>
+                        <Col xs="6" md="4">
+                            <Input
+                                type="text"
+                                name="product"
+                                placeholder="Product Name"
+                                required
+                                onChange={this.handleChange}
+                                value={this.state.product}
+                            />
+                        </Col>
+                        <Col xs="6" md="3">
+                            <Input
+                                type="number"
+                                name="qty"
+                                placeholder="Quantity"
+                                required
+                                onChange={this.handleChange}
+                                value={this.state.qty}
+                            />
+                        </Col>
+                        <Col xs="6" md="3">
+                            <Input
+                                type="number"
+                                name="price"
+                                placeholder="Price"
+                                required
+                                onChange={this.handleChange}
+                                value={this.state.price}
+                                step=".01"
+                            />
+                        </Col>
+                        <Col xs="6" md="2">
+                            <Button type="submit" color="secondary">Add</Button>
+                        </Col>
+                    </Row>
+                </Form>
+            </div>
         );
     }
 
@@ -58,8 +66,8 @@ class AddItem extends Component {
         this.props.dispatch(addItem(this.state));
         this.setState({
             product: '',
-            qty: 0,
-            price: 0
+            qty: '',
+            price: ''
         });
     }
 }

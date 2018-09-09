@@ -1,15 +1,15 @@
 import React from 'react';
-import { Container } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
 import List from './List';
 import AddItem from './AddItem';
-import GrandTotal from './GrandTotal';
 
 export function App() {
   return (
     <Container>
-      <AddItem />
-      <List />
-      <GrandTotal />
+      <Row>
+        <Col xs="12" lg="9"><AddItem /></Col>
+        <Col xs="12" lg="9"><List /></Col>
+      </Row>
     </Container>
   );
 }

@@ -1,0 +1,29 @@
+.add-item {
+    margin: 1.5em 0 1em;
+}
+
+.add-item form {
+    border: 2px solid black !important;
+    padding: 1em 1em .5em;
+}
+
+.form-inline {
+    width: 100% !important;
+}
+
+.add-item input, .add-item button {
+    margin: 0 .5em;
+    border-radius: 0;
+    background: white;
+    color: black;
+    border: black solid 2px;
+}
+
+.add-item input, .add-item button {
+    width: 100% !important;
+    margin: 0 0 .5em;
+}
+
+.add-item button {
+    box-shadow: 4px 4px black;
+}

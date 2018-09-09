@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Table } from 'reactstrap';
+import { ListGroup, ListGroupItem, Row, Col } from 'reactstrap';
 import Item from './Item';
+import GrandTotal from './GrandTotal';
+import '../styles/List.css';
 
 class List extends Component {
     render() {
         return (
-            <Table dark bordered>
-                <thead>
-                    <tr><th colSpan={4}>Items</th></tr>
-                    <tr>
-                        <th>Product</th>
-                        <th>Quantity</th>
-                        <th>Price</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody>
+            <div className="items">
+                <h5>Items</h5>
+                <ListGroup>
+                    <ListGroupItem>
+                        <Row>
+                            <Col xs="3">Product</Col>
+                            <Col xs="3">Quantity</Col>
+                            <Col xs="3">Price</Col>
+                            <Col xs="3">Total</Col>
+                        </Row>
+                    </ListGroupItem>
                     {this.props.items.list.map(index => {
                         return <Item {...this.props.items.details[index]} key={index} />
                     })}
-                </tbody>
-            </Table>
+                    <Col xs={{ size: 6, offset: 6 }} md={{ size: 3, offset: 9 }}><GrandTotal /></Col>
+                </ListGroup>
+            </div>
         );
     }
 }

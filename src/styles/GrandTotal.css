@@ -1,0 +1,11 @@
+.grand-total {
+    margin: 1em 0;
+    padding: 1em;
+    border: solid black 2px;
+}
+
+.grand-total h5 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1rem;
+}

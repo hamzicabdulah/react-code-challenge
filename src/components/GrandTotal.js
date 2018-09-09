@@ -1,14 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import '../styles/GrandTotal.css';
 
 class GrandTotal extends Component {
     render() {
         return (
-            <div>{this.props.items.list.reduce((grandTotal, index) => {
-                const { qty, price } = this.props.items.details[index];
-                const itemTotal = qty * price;
-                return grandTotal + itemTotal;
-            })}</div>
+            <div className="grand-total">
+                <h5>Grand Total</h5>
+                {(this.props.items.list.reduce((grandTotal, index) => {
+                    const { qty, price } = this.props.items.details[index];
+                    const itemTotal = qty * price;
+                    return grandTotal + itemTotal;
+                }).toFixed(2))}
+            </div>
         );
     }
 }

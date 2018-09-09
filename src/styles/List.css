@@ -1,0 +1,26 @@
+.items {
+    margin: 2em 0;
+}
+
+.list-group, .list-group-item {
+    border: 2px solid black !important;
+    text-align: center;
+}
+
+.list-group-item {
+    margin: 1em 1em 0 !important;
+    border-radius: 0 !important;
+    padding: 1.3em 0 !important;
+}
+
+.list-group-item:first-child {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 575px) {
+    .list-group-item {
+        margin: .5em .5em 0 !important;
+        padding: 1.3em .3em !important;
+    }
+}

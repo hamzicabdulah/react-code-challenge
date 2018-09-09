@@ -1,13 +1,15 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Test from './Test';
+import { Container } from 'reactstrap';
+import List from './List';
+import AddItem from './AddItem';
+import GrandTotal from './GrandTotal';
 
 export function App() {
   return (
-    <BrowserRouter>
-      <React.Fragment>
-        <Route exact path='/' component={Test} />
-      </React.Fragment>
-    </BrowserRouter>
+    <Container>
+      <AddItem />
+      <List />
+      <GrandTotal />
+    </Container>
   );
 }

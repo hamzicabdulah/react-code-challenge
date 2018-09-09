@@ -7,8 +7,8 @@ export function App() {
   return (
     <Container>
       <Row>
-        <Col xs="12" lg="9"><AddItem /></Col>
-        <Col xs="12" lg="9"><List /></Col>
+        <Col xs="12" lg={{ size: "9", offset: "1" }}><AddItem /></Col>
+        <Col xs="12" lg={{ size: "9", offset: "1" }}><List /></Col>
       </Row>
     </Container>
   );
